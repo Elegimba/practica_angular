@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IPost } from '../../interfaces/ipost.interfaz';
 
 @Component({
   selector: 'app-post',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './post.component.css'
 })
 export class PostComponent {
+
+  @Input( {required: true } ) post: IPost | null = null;
 
 }

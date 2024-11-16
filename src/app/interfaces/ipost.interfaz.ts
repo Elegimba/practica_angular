@@ -9,8 +9,8 @@ export interface IPost {
 }
 
 export enum Categoria {
-    Chorradas = 'chorradas',
-    Noticias = 'noticias',
-    Promociones = 'promociones',
-    ContenidoDeInterés = 'interes'
+    chorradas = 'Chorradas',
+    noticias = 'Noticias',
+    promociones = 'Promociones',
+    contenidoDeInteres = 'Interés'
 }

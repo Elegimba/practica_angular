@@ -1,0 +1,10 @@
+.container app-post:first-child {
+    display: block;
+    border-top: 2px solid black;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px;
+    
+}

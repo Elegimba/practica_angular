@@ -1,1 +1,11 @@
-<app-post></app-post>
+<nav></nav>
+
+<div>
+    <h1>Blog de práctica Angular</h1>
+</div>
+
+<div class="container">
+    @for(post of arrPosts; track post.id) {
+        <app-post [post]="post"></app-post>
+    }
+</div>

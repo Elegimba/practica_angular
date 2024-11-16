@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PostComponent } from "../../components/post/post.component";
+import { IPost } from '../../interfaces/ipost.interfaz';
+import { ServicioService } from '../../services/servicio.service';
 
 @Component({
   selector: 'app-lista-posts',
@@ -9,5 +11,15 @@ import { PostComponent } from "../../components/post/post.component";
   styleUrl: './lista-posts.component.css'
 })
 export class ListaPostsComponent {
+  
+arrPosts: IPost[] = [];
+
+blogServices = inject(ServicioService);
+
+ngOnInit() {
+  this.arrPosts = this.blogServices.getAll();
+}
+
+  
 
 }
