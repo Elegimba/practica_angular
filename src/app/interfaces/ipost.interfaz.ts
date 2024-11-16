@@ -4,6 +4,13 @@ export interface IPost {
     texto: string;
     autor: string;
     imagen: string;
-    categoria: string;
+    categoria: Categoria;
     fecha: Date;
+}
+
+export enum Categoria {
+    Chorradas = 'chorradas',
+    Noticias = 'noticias',
+    Promociones = 'promociones',
+    ContenidoDeInterés = 'interes'
 }
