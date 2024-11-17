@@ -1,7 +1,16 @@
-<nav></nav>
 
 <div>
     <h1>Blog de práctica Angular</h1>
+</div>
+
+<div class="my-4">
+    <label class="form-label">Filtro</label>
+    <select class="form-select">
+        <option value="">Todos</option>
+        @for(cat of arrCategorias; track cat) {
+            <option>{{cat}}</option>
+        }
+    </select>
 </div>
 
 <div class="container">
@@ -10,3 +19,7 @@
         
     }
 </div>
+
+<nav>
+    <button [routerLink]="['/nuevo']">CREA UN POST</button>
+</nav>

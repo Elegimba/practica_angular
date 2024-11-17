@@ -43,5 +43,11 @@ export class ServicioService {
     this.posts.push(nuevoPost);
   }
 
+  getCategorias(): string[] {
+    const allCategorias = this.posts.map(post => post.categoria);
+    const categoriasSelect = new Set(allCategorias);
+    return [...categoriasSelect];
+  }
+
 
 }

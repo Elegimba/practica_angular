@@ -27,6 +27,7 @@ export class DetallesPostComponent {
     } else {
       console.log('Aljo non vai')
     }
+    console.log(postId)
   }
 
 }
