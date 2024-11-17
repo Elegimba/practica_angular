@@ -7,5 +7,6 @@ export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: '/posts' },
     { path: 'posts', component: ListaPostsComponent },
     { path: 'nuevo', component: NuevoPostComponent },
-    { path: 'detalles', component: DetallesPostComponent }
+    { path: 'posts/:idpost', component: DetallesPostComponent },
+    { path: '**', redirectTo: 'posts' }
 ];

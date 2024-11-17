@@ -33,4 +33,11 @@ img {
         width: 60%;
         align-content: center;
     }
+
+    &:hover {
+        scale: 102%;
+        border: 2px solid black;
+        background-color: white;
+        cursor: pointer; 
+    }
 }

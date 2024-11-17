@@ -31,9 +31,15 @@ export class ServicioService {
     return this.posts;
   }
 
+  getById(postId: number): any {
+    return this.posts.find(post => post.id === postId);
+  }
+
   getByCategory(categoria: Categoria): IPost[] {
     return this.posts.filter(post => post.categoria === categoria)
   }
+
+
 
 
 }
