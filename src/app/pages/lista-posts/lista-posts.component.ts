@@ -13,16 +13,25 @@ import { RouterLink } from '@angular/router';
 })
 export class ListaPostsComponent {
   
-arrPosts: IPost[] = [];
-arrCategorias: string[] = [];
+  arrPosts: IPost[] = [];
+  arrCategorias: string[] = [];
 
-blogServices = inject(ServicioService);
+  blogServices = inject(ServicioService);
 
-ngOnInit() {
-  this.arrPosts = this.blogServices.getAll();
-  this.arrCategorias = this.blogServices.getCategorias();
-}
+  ngOnInit() {
+    this.arrPosts = this.blogServices.getAll();
+    this.arrCategorias = this.blogServices.getCategorias();
+  }
 
+  onChange($event: Event) {
+    const selector = $event.target as HTMLSelectElement;
+    console.log(selector.value, '1')
+    if(selector.value === "") {
+      this.arrPosts = this.blogServices.getAll();
+    } else {      
+      this.arrPosts = this.blogServices.getByCategory(selector.value);
+    }
+  }
 
   
 

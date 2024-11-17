@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ServicioService } from '../../services/servicio.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Categoria, IPost } from '../../interfaces/ipost.interfaz';
+import { IPost } from '../../interfaces/ipost.interfaz';
 import { Router } from '@angular/router';
 
 
@@ -32,15 +32,15 @@ export class NuevoPostComponent {
     const posts = this.blogServices.getAll();
     let sigId = Math.max(...posts.map(post => post.id)) +1
 
-    const mapCategoria = (value: string): Categoria => {
+    /* const mapCategoria = (value: string): Categoria => {
       return Categoria[value as keyof typeof Categoria];
-    }
+    } */
 
     const nuevoPost: IPost = {
       ...this.formulario.value,
       id: sigId,
       fecha: new Date,
-      categoria: mapCategoria(this.formulario.value.categoria)
+      /* categoria: mapCategoria(this.formulario.value.categoria) */
     }
     console.log(nuevoPost)
 
