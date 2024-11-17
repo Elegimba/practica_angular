@@ -1,12 +1,22 @@
 @if(post) {
 <div class="list-card">
+    <div>
+        <h2>{{post.titulo}}</h2>
+    </div>
     <figure>
         <img [src]="post.imagen" alt="">
     </figure>
-    <div>
-        <h2>{{post.titulo}}</h2>
-        <p>{{post.autor}} -> <time datetime="2024-11-16">{{post.fecha}}</time></p>
-        <p>{{post.categoria}}</p>
+    <div class="bloke2">
+        <div>
+            <!-- <textarea name="contenido" id="content" placeholder="Expláyate a gusto...">{{post.texto}}</textarea> -->
+            <p>{{post.texto}}</p>
+        </div>
+        <div>
+            <p>Autor: <strong>{{post.autor}}</strong></p>
+            <p>Categoría: <strong>{{post.categoria}}</strong></p>
+            <time datetime="2024-11-16">Fecha: <strong>{{post.fecha}}</strong></time>
+            <button class="btn btn-danger" [routerLink]="['/posts']">VOLVER</button>
+        </div>
     </div>
 </div>
 }

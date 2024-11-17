@@ -13,4 +13,9 @@ export class PostComponent {
 
   @Input( {required: true } ) post: IPost | null = null;
 
+  selectPost(postId: number): any {
+    localStorage.setItem('selectedPostId', postId.toString());
+    console.log('Post seleccionado:', postId)
+  }
+
 }

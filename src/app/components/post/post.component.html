@@ -1,5 +1,5 @@
 @if(post) {
-    <div class="list-card" [routerLink]="['/posts', post.id]">
+    <div class="list-card" [routerLink]="['/posts', post.id]" (click)="selectPost(post.id)">
         <figure>
             <img [src]="post.imagen" alt="">
         </figure>

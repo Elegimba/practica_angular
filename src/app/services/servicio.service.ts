@@ -39,7 +39,7 @@ export class ServicioService {
     return this.posts.filter(post => post.categoria === categoria)
   }
 
-
+  
 
 
 }
