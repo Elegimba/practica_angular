@@ -1,1 +1,33 @@
-<p>nuevo-post works!</p>
+<div class="row">
+    <div class="col-10 offset-1">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Título</label>
+                <input type="text" class="form-control" placeholder="Dale un título a esta maravilla..." formControlName="titulo">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Autor</label>
+                <input type="text" class="form-control" placeholder="Echa una firmica..." formControlName="autor">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Categoría</label>
+                <select class="form-control" formControlName="categoria">
+                    <option value="">🔽 --Selecciona una categoría--</option>
+                    <option value="chorradas">Chorradas</option>
+                    <option value="noticias">Noticias</option>
+                    <option value="promociones">Promociones</option>
+                    <option value="contenidoDeInteres">Interés</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Imagen</label>
+                <input type="url" class="form-control" placeholder="Inserta la Url de una imagen..." formControlName="imagen">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Texto</label>
+                <textarea class="form-control" placeholder="Expláyate a gusto..." formControlName="texto"></textarea>
+            </div>
+            <input type="submit" class="btn btn-info" value="Enviar">
+        </form>
+    </div>
+</div>

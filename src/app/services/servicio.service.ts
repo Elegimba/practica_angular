@@ -39,7 +39,9 @@ export class ServicioService {
     return this.posts.filter(post => post.categoria === categoria)
   }
 
-  
+  pushPost(nuevoPost: IPost) {
+    this.posts.push(nuevoPost);
+  }
 
 
 }
