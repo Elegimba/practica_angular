@@ -5,7 +5,7 @@ export interface IPost {
     autor: string;
     imagen: string;
     categoria: string;
-    fecha: Date;
+    fecha: Date | string;
 }
 
 /* export enum Categoria {

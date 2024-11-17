@@ -3,6 +3,7 @@ import { ServicioService } from '../../services/servicio.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { IPost } from '../../interfaces/ipost.interfaz';
 import { Router } from '@angular/router';
+import dayjs from 'dayjs';
 
 
 @Component({
@@ -30,7 +31,7 @@ export class NuevoPostComponent {
     console.log('Categoría seleccionada:', this.formulario.value.categoria);
 
     const posts = this.blogServices.getAll();
-    let sigId = Math.max(...posts.map(post => post.id)) +1
+    let sigId = Math.max(...posts.map((post: { id: number; }) => post.id)) +1
 
     /* const mapCategoria = (value: string): Categoria => {
       return Categoria[value as keyof typeof Categoria];
@@ -39,7 +40,7 @@ export class NuevoPostComponent {
     const nuevoPost: IPost = {
       ...this.formulario.value,
       id: sigId,
-      fecha: new Date,
+      fecha: dayjs().format('DD - MMMM - YYYY --> H:mm:ss'),
       /* categoria: mapCategoria(this.formulario.value.categoria) */
     }
     console.log(nuevoPost)
