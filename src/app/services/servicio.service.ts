@@ -30,7 +30,11 @@ export class ServicioService {
 
   getAll() {
     const localPosts = localStorage.getItem('arrPostsLocal')
-    return localPosts ? JSON.parse(localPosts) : this.posts;
+    if(localPosts){
+      this.posts = JSON.parse(localPosts)
+    }
+
+    return this.posts;
   }
 
   getById(postId: number): any {
@@ -46,8 +50,10 @@ export class ServicioService {
     localStorage.setItem('arrPostsLocal', JSON.stringify(this.posts));
   }
 
-  getCategorias(): string[] {
-    const allCategorias = this.posts.map(post => post.categoria);
+  getCategorias(): unknown[] {
+    const localPosts = localStorage.getItem('arrPostsLocal')
+    /* const allCategorias = this.posts.map(post => post.categoria); */
+    const allCategorias = localPosts ? JSON.parse(localPosts).map((post: { categoria: string; }) => post.categoria) : this.posts.map(post => post.categoria);
     const categoriasSelect = new Set(allCategorias);
     return [...categoriasSelect];
   }

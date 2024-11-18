@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
 export class ListaPostsComponent {
   
   arrPosts: IPost[] = [];
-  arrCategorias: string[] = [];
+  arrCategorias: any[] = [];
 
   blogServices = inject(ServicioService);
 
